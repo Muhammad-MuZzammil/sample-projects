@@ -1,0 +1,19 @@
+<main>
+  <div *ngIf="products?.length > 0">
+    <ul *ngFor="let product of products; let i = index">
+      <li>
+        <p>{{ product.productData.title }} ( {{ product.qty }} )</p>
+        <button
+          class="btn"
+          type="submit"
+          (click)="deleteCart(product.productData.id,i)"
+        >
+          Delete
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="products?.length == 0">
+    <h1>No Products in Cart</h1>
+  </div>
+</main>

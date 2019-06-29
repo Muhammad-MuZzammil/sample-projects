@@ -1,0 +1,39 @@
+<div class="backdrop"></div>
+<header class="main-header">
+  <button id="side-menu-toggle">Menu</button>
+  <nav class="main-header__nav">
+    <ul class="main-header__item-list">
+      <li class="main-header__item">
+        <a
+          [routerLink]="['/products']"
+          routerLinkActive="active"
+          >Products</a
+        >
+      </li>
+      <li class="main-header__item">
+        <a
+          [routerLink]="['/addToCart']"
+          routerLinkActive="active"
+          
+          >Cart</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <div class="top-cart-wrapper" (click)="showCart()">
+    <span class="cart_img"><i class="fa fa-shopping-cart"></i></span>
+
+    <div class="top-cart-contain">
+      <div class="block-cart">
+        <span class="top-cart-title"></span>
+        <span class="top-cart-count">
+          {{ cartQty }} <span class="price"> </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- add to cart icon -->
+
+<router-outlet (cartQtv)="catchQtv($event)"></router-outlet>
